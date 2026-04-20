@@ -1,0 +1,148 @@
+export interface Question {
+  id: number;
+  category: 'english' | 'aptitude' | 'technical';
+  question: string;
+  options: string[];
+  correct: number;
+}
+
+// ===== INITIAL ASSESSMENT (30 questions: 10 per category) =====
+export const initialQuestions: Question[] = [
+  // English (10)
+  { id: 1, category: 'english', question: 'Choose the correct sentence:', options: ['He don\'t know nothing.', 'He doesn\'t know anything.', 'He don\'t know anything.', 'He doesn\'t knows anything.'], correct: 1 },
+  { id: 2, category: 'english', question: 'What is the synonym of "eloquent"?', options: ['Shy', 'Fluent', 'Confused', 'Harsh'], correct: 1 },
+  { id: 3, category: 'english', question: '"Break the ice" means:', options: ['Destroy something', 'Start a conversation', 'Cool down', 'End a relationship'], correct: 1 },
+  { id: 4, category: 'english', question: 'Choose the correct spelling:', options: ['Accomodation', 'Accommodation', 'Acomodation', 'Accomodatin'], correct: 1 },
+  { id: 5, category: 'english', question: '"She _____ to the store yesterday."', options: ['go', 'goes', 'went', 'going'], correct: 2 },
+  { id: 6, category: 'english', question: 'What is the plural of "phenomenon"?', options: ['Phenomenons', 'Phenomena', 'Phenomenas', 'Phenomeni'], correct: 1 },
+  { id: 7, category: 'english', question: '"To burn the midnight oil" means:', options: ['To waste resources', 'To work late at night', 'To cook at night', 'To travel late'], correct: 1 },
+  { id: 8, category: 'english', question: 'The word "ubiquitous" means:', options: ['Rare', 'Everywhere', 'Unique', 'Hidden'], correct: 1 },
+  { id: 9, category: 'english', question: '"Procrastinate" means:', options: ['To hurry', 'To delay', 'To plan', 'To execute'], correct: 1 },
+  { id: 10, category: 'english', question: 'Which word is a conjunction?', options: ['Quickly', 'Although', 'Beautiful', 'Running'], correct: 1 },
+
+  // Aptitude (10)
+  { id: 11, category: 'aptitude', question: 'If 5x + 3 = 28, what is x?', options: ['3', '4', '5', '6'], correct: 2 },
+  { id: 12, category: 'aptitude', question: 'Complete the series: 2, 6, 18, 54, ?', options: ['108', '162', '148', '180'], correct: 1 },
+  { id: 13, category: 'aptitude', question: 'What is 25% of 240?', options: ['50', '55', '60', '65'], correct: 2 },
+  { id: 14, category: 'aptitude', question: 'A clock shows 3:15. What is the angle between the hands?', options: ['0°', '7.5°', '15°', '22.5°'], correct: 1 },
+  { id: 15, category: 'aptitude', question: 'Which number is a prime number?', options: ['51', '57', '59', '55'], correct: 2 },
+  { id: 16, category: 'aptitude', question: 'The ratio 3:5 is equivalent to:', options: ['6:10', '9:20', '12:25', '15:20'], correct: 0 },
+  { id: 17, category: 'aptitude', question: 'Simple interest on ₹1000 at 10% for 2 years is:', options: ['₹100', '₹150', '₹200', '₹250'], correct: 2 },
+  { id: 18, category: 'aptitude', question: 'The LCM of 4 and 6 is:', options: ['2', '12', '24', '6'], correct: 1 },
+  { id: 19, category: 'aptitude', question: 'Complete: 1, 1, 2, 3, 5, 8, ?', options: ['11', '12', '13', '15'], correct: 2 },
+  { id: 20, category: 'aptitude', question: 'The average of 10, 20, 30, 40, 50 is:', options: ['25', '30', '35', '40'], correct: 1 },
+
+  // Technical (10)
+  { id: 21, category: 'technical', question: 'What does HTML stand for?', options: ['Hyper Text Markup Language', 'High Tech Modern Language', 'Hyper Transfer Markup Language', 'Home Tool Markup Language'], correct: 0 },
+  { id: 22, category: 'technical', question: 'Which is NOT a programming language?', options: ['Python', 'Java', 'HTML', 'C++'], correct: 2 },
+  { id: 23, category: 'technical', question: 'What is the time complexity of binary search?', options: ['O(n)', 'O(log n)', 'O(n²)', 'O(1)'], correct: 1 },
+  { id: 24, category: 'technical', question: 'Which data structure uses LIFO?', options: ['Queue', 'Stack', 'Array', 'Linked List'], correct: 1 },
+  { id: 25, category: 'technical', question: 'What is an API?', options: ['Application Programming Interface', 'Applied Program Integration', 'Automated Process Input', 'Application Process Interface'], correct: 0 },
+  { id: 26, category: 'technical', question: 'Which protocol is used for secure web browsing?', options: ['HTTP', 'FTP', 'HTTPS', 'SMTP'], correct: 2 },
+  { id: 27, category: 'technical', question: 'In Python, which keyword defines a function?', options: ['function', 'def', 'func', 'define'], correct: 1 },
+  { id: 28, category: 'technical', question: 'SQL stands for:', options: ['Structured Query Language', 'Simple Question Language', 'Structured Question Logic', 'System Query Language'], correct: 0 },
+  { id: 29, category: 'technical', question: 'OOP stands for:', options: ['Object Oriented Programming', 'Open Operating Platform', 'Optimal Output Processing', 'Object Operating Procedure'], correct: 0 },
+  { id: 30, category: 'technical', question: 'What is "localhost"?', options: ['A remote server', 'Your own computer', 'A cloud service', 'A domain registrar'], correct: 1 },
+];
+
+// ===== MAIN ASSESSMENT (90 questions: 30 per category) =====
+export const mainQuestions: Question[] = [
+  // ===== COMMUNICATION (30) =====
+  { id: 101, category: 'english', question: 'Choose the correct sentence:', options: ['He don\'t know nothing.', 'He doesn\'t know anything.', 'He don\'t know anything.', 'He doesn\'t knows anything.'], correct: 1 },
+  { id: 102, category: 'english', question: 'What is the synonym of "eloquent"?', options: ['Shy', 'Fluent', 'Confused', 'Harsh'], correct: 1 },
+  { id: 103, category: 'english', question: 'Identify the correct passive voice: "She writes a letter."', options: ['A letter is written by her.', 'A letter was written by her.', 'A letter is being written by her.', 'A letter has been written by her.'], correct: 0 },
+  { id: 104, category: 'english', question: '"Break the ice" means:', options: ['Destroy something', 'Start a conversation', 'Cool down', 'End a relationship'], correct: 1 },
+  { id: 105, category: 'english', question: 'Choose the correct spelling:', options: ['Accomodation', 'Accommodation', 'Acomodation', 'Accomodatin'], correct: 1 },
+  { id: 106, category: 'english', question: 'Which word is an antonym of "benevolent"?', options: ['Kind', 'Malevolent', 'Generous', 'Warm'], correct: 1 },
+  { id: 107, category: 'english', question: '"She _____ to the store yesterday."', options: ['go', 'goes', 'went', 'going'], correct: 2 },
+  { id: 108, category: 'english', question: 'What is the plural of "phenomenon"?', options: ['Phenomenons', 'Phenomena', 'Phenomenas', 'Phenomeni'], correct: 1 },
+  { id: 109, category: 'english', question: 'Choose the correctly punctuated sentence:', options: ['Its a beautiful day.', 'It\'s a beautiful day.', 'Its\' a beautiful day.', 'It\'s a beautiful, day.'], correct: 1 },
+  { id: 110, category: 'english', question: '"To burn the midnight oil" means:', options: ['To waste resources', 'To work late at night', 'To cook at night', 'To travel late'], correct: 1 },
+  { id: 111, category: 'english', question: 'Which sentence uses "their" correctly?', options: ['Their going to the park.', 'They left their bags here.', 'Their is no way.', 'Its their turn to.'], correct: 1 },
+  { id: 112, category: 'english', question: 'The word "ubiquitous" means:', options: ['Rare', 'Everywhere', 'Unique', 'Hidden'], correct: 1 },
+  { id: 113, category: 'english', question: 'Choose the correct article: "___ university is a place of learning."', options: ['A', 'An', 'The', 'No article'], correct: 0 },
+  { id: 114, category: 'english', question: 'Which is a compound sentence?', options: ['I ran fast.', 'I ran fast, but I missed the bus.', 'Running fast to catch the bus.', 'The fast runner.'], correct: 1 },
+  { id: 115, category: 'english', question: '"Procrastinate" means:', options: ['To hurry', 'To delay', 'To plan', 'To execute'], correct: 1 },
+  { id: 116, category: 'english', question: 'Choose the correct preposition: "She is good ___ mathematics."', options: ['in', 'at', 'on', 'with'], correct: 1 },
+  { id: 117, category: 'english', question: 'Which word is a conjunction?', options: ['Quickly', 'Although', 'Beautiful', 'Running'], correct: 1 },
+  { id: 118, category: 'english', question: '"A penny for your thoughts" means:', options: ['I want money', 'Tell me what you\'re thinking', 'Save money', 'Think wisely'], correct: 1 },
+  { id: 119, category: 'english', question: 'Identify the adverb in: "She sings beautifully."', options: ['She', 'sings', 'beautifully', 'None'], correct: 2 },
+  { id: 120, category: 'english', question: 'Which sentence is in the future perfect tense?', options: ['I will go.', 'I will have finished by then.', 'I am going.', 'I had gone.'], correct: 1 },
+  { id: 121, category: 'english', question: '"Ameliorate" means:', options: ['Worsen', 'Improve', 'Maintain', 'Destroy'], correct: 1 },
+  { id: 122, category: 'english', question: 'Choose the correct form: "Neither the boys nor the girl ___ present."', options: ['are', 'were', 'was', 'have been'], correct: 2 },
+  { id: 123, category: 'english', question: 'A "monologue" involves:', options: ['Two speakers', 'One speaker', 'A group', 'Written text only'], correct: 1 },
+  { id: 124, category: 'english', question: 'Which is an example of alliteration?', options: ['The cat sat on the mat', 'Peter Piper picked peppers', 'She is as tall as a tree', 'Time flies'], correct: 1 },
+  { id: 125, category: 'english', question: '"Ephemeral" means:', options: ['Lasting forever', 'Short-lived', 'Beautiful', 'Mysterious'], correct: 1 },
+  { id: 126, category: 'english', question: 'What is a "metaphor"?', options: ['A direct comparison using "like"', 'An implied comparison without "like" or "as"', 'An exaggeration', 'A question asked for effect'], correct: 1 },
+  { id: 127, category: 'english', question: '"Cacophony" refers to:', options: ['Pleasant sound', 'Harsh, jarring noise', 'Silence', 'Musical rhythm'], correct: 1 },
+  { id: 128, category: 'english', question: 'The word "ambiguous" means:', options: ['Clear', 'Having multiple meanings', 'Simple', 'Direct'], correct: 1 },
+  { id: 129, category: 'english', question: 'Which is a correct use of semicolon?', options: ['I went; and came back.', 'I love coding; it is my passion.', 'She; was happy.', 'The; cat sat.'], correct: 1 },
+  { id: 130, category: 'english', question: '"Pragmatic" means:', options: ['Idealistic', 'Practical and realistic', 'Emotional', 'Theoretical'], correct: 1 },
+
+  // ===== APTITUDE & REASONING (30) =====
+  { id: 201, category: 'aptitude', question: 'If 5x + 3 = 28, what is x?', options: ['3', '4', '5', '6'], correct: 2 },
+  { id: 202, category: 'aptitude', question: 'Complete the series: 2, 6, 18, 54, ?', options: ['108', '162', '148', '180'], correct: 1 },
+  { id: 203, category: 'aptitude', question: 'A train travels 300 km in 5 hours. What is its speed?', options: ['50 km/h', '55 km/h', '60 km/h', '65 km/h'], correct: 2 },
+  { id: 204, category: 'aptitude', question: 'If all roses are flowers and some flowers are red, then:', options: ['All roses are red', 'Some roses may be red', 'No roses are red', 'All flowers are roses'], correct: 1 },
+  { id: 205, category: 'aptitude', question: 'What is 25% of 240?', options: ['50', '55', '60', '65'], correct: 2 },
+  { id: 206, category: 'aptitude', question: 'Find the odd one out: 3, 5, 11, 14, 17, 21', options: ['21', '11', '3', '14'], correct: 3 },
+  { id: 207, category: 'aptitude', question: 'A clock shows 3:15. What is the angle between the hands?', options: ['0°', '7.5°', '15°', '22.5°'], correct: 1 },
+  { id: 208, category: 'aptitude', question: 'If A is twice as old as B, and B is 15, how old is A?', options: ['25', '30', '35', '20'], correct: 1 },
+  { id: 209, category: 'aptitude', question: 'Which number is a prime number?', options: ['51', '57', '59', '55'], correct: 2 },
+  { id: 210, category: 'aptitude', question: 'If APPLE is coded as BQQMF, what is MANGO?', options: ['NBOHP', 'NBOHO', 'NBOHQ', 'NBNHP'], correct: 0 },
+  { id: 211, category: 'aptitude', question: 'The ratio 3:5 is equivalent to:', options: ['6:10', '9:20', '12:25', '15:20'], correct: 0 },
+  { id: 212, category: 'aptitude', question: 'A can do work in 10 days, B in 15 days. Together they finish in:', options: ['5 days', '6 days', '7 days', '8 days'], correct: 1 },
+  { id: 213, category: 'aptitude', question: 'What comes next: J, F, M, A, M, J, ?', options: ['A', 'J', 'S', 'O'], correct: 1 },
+  { id: 214, category: 'aptitude', question: 'Simple interest on ₹1000 at 10% for 2 years is:', options: ['₹100', '₹150', '₹200', '₹250'], correct: 2 },
+  { id: 215, category: 'aptitude', question: 'If you face North and turn 90° clockwise, you face:', options: ['South', 'East', 'West', 'North'], correct: 1 },
+  { id: 216, category: 'aptitude', question: 'The LCM of 4 and 6 is:', options: ['2', '12', '24', '6'], correct: 1 },
+  { id: 217, category: 'aptitude', question: 'A shopkeeper sells at 20% profit. Cost ₹500, selling price is:', options: ['₹550', '₹600', '₹650', '₹700'], correct: 1 },
+  { id: 218, category: 'aptitude', question: 'Complete: 1, 1, 2, 3, 5, 8, ?', options: ['11', '12', '13', '15'], correct: 2 },
+  { id: 219, category: 'aptitude', question: 'If 8 men finish work in 12 days, 6 men finish in:', options: ['14 days', '16 days', '18 days', '20 days'], correct: 1 },
+  { id: 220, category: 'aptitude', question: 'The average of 10, 20, 30, 40, 50 is:', options: ['25', '30', '35', '40'], correct: 1 },
+  { id: 221, category: 'aptitude', question: 'Pointing to a man, a woman said "His mother is my mother\'s daughter." The man is her:', options: ['Son', 'Brother', 'Nephew', 'Father'], correct: 0 },
+  { id: 222, category: 'aptitude', question: 'How many squares are in a 2×2 grid?', options: ['4', '5', '6', '8'], correct: 1 },
+  { id: 223, category: 'aptitude', question: 'A boat goes 20 km upstream in 4 hrs and 20 km downstream in 2 hrs. Speed of stream is:', options: ['2.5 km/h', '3 km/h', '5 km/h', '7.5 km/h'], correct: 0 },
+  { id: 224, category: 'aptitude', question: 'Mirror image of "AMBULANCE" reads as:', options: ['ECNALUBMA', 'AMBULANCE (reversed)', 'Mirrored text', 'AMBULANCE'], correct: 0 },
+  { id: 225, category: 'aptitude', question: 'If today is Wednesday, what day is it after 100 days?', options: ['Friday', 'Saturday', 'Sunday', 'Thursday'], correct: 0 },
+  { id: 226, category: 'aptitude', question: 'A man walks 5km North, then 3km East. How far is he from start?', options: ['√34 km', '8 km', '√25 km', '2 km'], correct: 0 },
+  { id: 227, category: 'aptitude', question: 'If x² = 144, then x = ?', options: ['±10', '±11', '±12', '±13'], correct: 2 },
+  { id: 228, category: 'aptitude', question: 'Compound interest on ₹1000 at 10% for 2 years is:', options: ['₹200', '₹210', '₹220', '₹230'], correct: 1 },
+  { id: 229, category: 'aptitude', question: 'In a race, if A beats B by 10m in 100m, when B finishes, A is at:', options: ['90m', '100m', '110m', '95m'], correct: 1 },
+  { id: 230, category: 'aptitude', question: 'The probability of getting heads on a fair coin is:', options: ['1/3', '1/2', '1/4', '2/3'], correct: 1 },
+
+  // ===== TECHNICAL SKILLS (30) =====
+  { id: 301, category: 'technical', question: 'What does HTML stand for?', options: ['Hyper Text Markup Language', 'High Tech Modern Language', 'Hyper Transfer Markup Language', 'Home Tool Markup Language'], correct: 0 },
+  { id: 302, category: 'technical', question: 'Which is NOT a programming language?', options: ['Python', 'Java', 'HTML', 'C++'], correct: 2 },
+  { id: 303, category: 'technical', question: 'What is the time complexity of binary search?', options: ['O(n)', 'O(log n)', 'O(n²)', 'O(1)'], correct: 1 },
+  { id: 304, category: 'technical', question: 'CSS stands for:', options: ['Cascading Style Sheets', 'Creative Style System', 'Computer Style Sheets', 'Cascading System Styles'], correct: 0 },
+  { id: 305, category: 'technical', question: 'Which data structure uses LIFO?', options: ['Queue', 'Stack', 'Array', 'Linked List'], correct: 1 },
+  { id: 306, category: 'technical', question: 'What is an API?', options: ['Application Programming Interface', 'Applied Program Integration', 'Automated Process Input', 'Application Process Interface'], correct: 0 },
+  { id: 307, category: 'technical', question: 'Which protocol is used for secure web browsing?', options: ['HTTP', 'FTP', 'HTTPS', 'SMTP'], correct: 2 },
+  { id: 308, category: 'technical', question: 'In Python, which keyword defines a function?', options: ['function', 'def', 'func', 'define'], correct: 1 },
+  { id: 309, category: 'technical', question: 'What is the output of: print(2 ** 3)?', options: ['5', '6', '8', '9'], correct: 2 },
+  { id: 310, category: 'technical', question: 'SQL stands for:', options: ['Structured Query Language', 'Simple Question Language', 'Structured Question Logic', 'System Query Language'], correct: 0 },
+  { id: 311, category: 'technical', question: 'Which is a JavaScript framework?', options: ['Django', 'Flask', 'React', 'Laravel'], correct: 2 },
+  { id: 312, category: 'technical', question: 'What does "git push" do?', options: ['Downloads changes', 'Uploads local commits to remote', 'Creates a branch', 'Deletes files'], correct: 1 },
+  { id: 313, category: 'technical', question: 'OOP stands for:', options: ['Object Oriented Programming', 'Open Operating Platform', 'Optimal Output Processing', 'Object Operating Procedure'], correct: 0 },
+  { id: 314, category: 'technical', question: 'Which sorting algorithm has the best average complexity?', options: ['Bubble Sort', 'Merge Sort', 'Selection Sort', 'Insertion Sort'], correct: 1 },
+  { id: 315, category: 'technical', question: 'What is a "foreign key" in databases?', options: ['A primary identifier', 'A reference to another table\'s primary key', 'An encryption key', 'A unique constraint'], correct: 1 },
+  { id: 316, category: 'technical', question: 'Which is a NoSQL database?', options: ['MySQL', 'PostgreSQL', 'MongoDB', 'Oracle'], correct: 2 },
+  { id: 317, category: 'technical', question: 'REST API typically uses which data format?', options: ['XML only', 'JSON', 'CSV', 'YAML'], correct: 1 },
+  { id: 318, category: 'technical', question: 'What is "localhost"?', options: ['A remote server', 'Your own computer', 'A cloud service', 'A domain registrar'], correct: 1 },
+  { id: 319, category: 'technical', question: 'Which command lists files in Linux?', options: ['dir', 'ls', 'list', 'show'], correct: 1 },
+  { id: 320, category: 'technical', question: 'What does DNS stand for?', options: ['Domain Name System', 'Data Network Service', 'Digital Name Server', 'Domain Network System'], correct: 0 },
+  { id: 321, category: 'technical', question: 'In CSS, "display: flex" enables:', options: ['Grid layout', 'Flexbox layout', 'Table layout', 'Block layout'], correct: 1 },
+  { id: 322, category: 'technical', question: 'What is a "constructor" in OOP?', options: ['A method to destroy objects', 'A method called when creating objects', 'A static method', 'A utility function'], correct: 1 },
+  { id: 323, category: 'technical', question: 'Which HTTP method is used to update data?', options: ['GET', 'POST', 'PUT', 'DELETE'], correct: 2 },
+  { id: 324, category: 'technical', question: 'What is "Docker" used for?', options: ['Code editing', 'Containerization', 'Database management', 'Version control'], correct: 1 },
+  { id: 325, category: 'technical', question: 'Big-O notation describes:', options: ['Code style', 'Algorithm efficiency', 'Memory allocation', 'Network speed'], correct: 1 },
+  { id: 326, category: 'technical', question: 'What is "polymorphism" in OOP?', options: ['Hiding data', 'One interface, multiple forms', 'Creating objects', 'Destroying objects'], correct: 1 },
+  { id: 327, category: 'technical', question: 'What does CI/CD stand for?', options: ['Code Integration / Code Delivery', 'Continuous Integration / Continuous Deployment', 'Computer Interface / Computer Design', 'Central Integration / Central Delivery'], correct: 1 },
+  { id: 328, category: 'technical', question: 'What is a "closure" in JavaScript?', options: ['A closed function', 'A function with access to its outer scope', 'A terminated process', 'A class method'], correct: 1 },
+  { id: 329, category: 'technical', question: 'Which is a version control system?', options: ['Docker', 'Git', 'Kubernetes', 'Jenkins'], correct: 1 },
+  { id: 330, category: 'technical', question: 'What is "normalization" in databases?', options: ['Speeding up queries', 'Organizing data to reduce redundancy', 'Adding indexes', 'Creating backups'], correct: 1 },
+];
+
+// Legacy export for backward compatibility
+export const questions = mainQuestions;
